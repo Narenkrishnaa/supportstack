@@ -1,0 +1,17 @@
+<section class="well well-small mePadd">
+  <h2 class="meFont" style="padding-bottom:30px;"><span class="icon-comment meMarg"></span> Edit profile</h2>
+  <div class="">
+    <% if (user_signed_in?) and (current_user.role.name == "staff") %>
+      <%= render "devise/registrations/staff" %>
+    <% else %>
+      <%= render "devise/registrations/client" %>
+    <% end %>
+  </div>
+</section><!--Edit user profile Ends-->
+
+
+
+
+
+
+

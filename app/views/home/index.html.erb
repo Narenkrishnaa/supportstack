@@ -1,0 +1,237 @@
+<div class="col-xs-12">
+
+    <div class="col-xs-7">
+       
+    <h4> SupportStack is a Web application where client can create the tickets and the staff would resolve the tickets.   
+    </h4>
+     
+    <div class="col-xs-4">
+      <br><br>
+    </div>
+    <div class="col-xs-2">
+    </div>
+    <div class="col-xs-4">
+      <br><br>
+      </div>
+    
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="col-xs-4">
+  
+
+     <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+       <% if alert %>
+         <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+
+<section class="well well-small mePadd">
+               <h3> <center>  Sign Up</center></h3>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-actions form-horizontal"}) do |f| %>
+
+<%= devise_error_messages! %>
+
+
+<div class="control-group">
+<label class="control-label" for="">First Name:</label>
+<div class="controls">
+  <%= f.text_field :first_name, class: "input-block-level" %>
+</div>
+</div>
+  
+<div class="control-group">
+<label class="control-label" for="">Last Name:</label>
+<div class="controls">
+  <%= f.text_field :last_name, class: "input-block-level" %>
+</div>
+</div>
+
+ <div class="control-group">
+<label class="control-label" for="">Company Name:</label>
+<div class="controls"> 
+  <%= f.text_field :company_name, class: "input-block-level" %>
+</div>
+</div>
+
+ <div class="control-group">
+<label class="control-label" for="">Mobile number:</label>
+<div class="controls">
+  <%= f.text_field :mobile_no, class: "input-block-level" %>
+</div>
+</div>
+
+ <div class="control-group">
+<label class="control-label" for="">Fax:</label>
+<div class="controls"> 
+  <%= f.text_field :fax, class: "input-block-level" %>  
+</div>
+</div>
+
+ <div class="control-group">
+<label class="control-label" for="">Email:</label>
+<div class="controls"> 
+  <%= f.email_field :email, class: "input-block-level" %>
+</div>
+</div>
+
+<div class="control-group">
+<label class="control-label" for="">Password:</label>
+<div class="controls">
+  <%= f.password_field :password, autocomplete: "off", class: "input-block-level" %>
+</div>
+</div>
+
+  <div class="control-group">
+<label class="control-label" for="">Password confirmation:</label>
+<div class="controls">
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "input-block-level" %>
+</div>
+</div>
+
+<div class="control-group ">
+  <label class="control-label" for="">Photo:</label>
+  <div class="controls">
+    <%= f.fields_for :attachment_attributes, Attachment.new do |attachment_form| %>
+    <%= attachment_form.file_field :attachment %>
+    <%end%>
+  </div>
+</div>
+<% @role = Role.find_by_name("client") %>
+<%= f.hidden_field :role_id, :value => @role.id%>
+
+ <div class="control-group pull-right">
+ <div class="controls">
+  <button type="submit" class="btn" name="editUser">Sign up</button>
+  </div>
+</div>
+<% end %>
+
+</div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

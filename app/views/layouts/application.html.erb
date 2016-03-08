@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="robots" content="noindex">
+<meta name="googlebot" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>SupportStack</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<script type="text/javascript" src="home-page_files/ievfallback.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ $('#myModal').hide(); });
+$('#myModal').modal({
+    keyboard: false
+  });
+$('#myModal').modal('show');
+</script>
+
+<script src="client-profile_files/ievfallback.js"></script>
+<link rel="stylesheet" type="text/css" href="client-profile_files/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="client-profile_files/bootstrap-responsive.css">
+<link rel="stylesheet" type="text/css" href="client-profile_files/myCSS.css">
+
+</head>
+
+<body class="<%= controller.controller_name %>">
+  <% if current_client %>          
+    <%= render "layouts/client_header" %>
+  <% elsif current_staff %>
+    <%= render "layouts/staff_header" %>
+  <% else %>
+    <%= render "layouts/header" %>
+  <% end %>
+
+  <%= yield %>
+
+  <%= render "layouts/footer" %>     
+</body>
+</html>
+
