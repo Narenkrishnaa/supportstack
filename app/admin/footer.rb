@@ -7,7 +7,7 @@ module ActiveAdmin
         super :style => "text-align: right;"                                     
 
         div do                                                                   
-          small                                        
+          small "naren supportstack"                                       
         end
       end
 
