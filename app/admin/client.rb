@@ -1,6 +1,6 @@
 ActiveAdmin.register User, :as => "client" do
 
-  permit_params :first_name, :last_name, :department_id, :role_id, :company_name, :mobile_no, :email, :password, :password_confirmation, :client, attachment_attributes: [:attachment]
+  permit_params :first_name, :last_name, :department_id, :role_id, :mobile_no, :email, :password, :password_confirmation, :client, attachment_attributes: [:attachment]
 
   scope :active_client
   scope :inactive_client
@@ -8,12 +8,12 @@ ActiveAdmin.register User, :as => "client" do
   index do
     selectable_column
     column :first_name
-    column :company_name
     column :mobile_no
     column :email
     actions
   end
-  filter :company_name
+
+filter :department
 
   form do |f|
     f.inputs "Client Details" do
@@ -21,7 +21,6 @@ ActiveAdmin.register User, :as => "client" do
       f.input :last_name
       f.input :role_id, as: :hidden, value: Role.find_by(name: "client").try(:id)
       f.input :client, as: :hidden, value: true
-      f.input :company_name
       f.input :mobile_no
       f.input :email
       f.input :password if f.object.new_record?
@@ -36,7 +35,6 @@ ActiveAdmin.register User, :as => "client" do
   show do
     attributes_table do
       row :first_name
-      row :company_name
       row :email
       row :mobile_no
     end

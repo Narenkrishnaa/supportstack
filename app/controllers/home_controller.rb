@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
-	
+
+
+
 
 	before_action :navication, only: :index
 	def index
