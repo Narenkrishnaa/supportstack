@@ -29,4 +29,8 @@ class User < ActiveRecord::Base
     scope :active_client, ->{ active.client }
     scope :inactive_staff, ->{ inactive.staff }
     scope :inactive_client, ->{ inactive.client }
+
+    def user_name
+        (first_name + " " + last_name).upcase
+    end
 end

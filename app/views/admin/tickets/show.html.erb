@@ -1,0 +1,67 @@
+<br/>
+<br/>
+<article class="container" style="margin-top:-18px;">
+	<section class="well well-small mePadd">
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= link_to "Back",admin_tickets_path,class:"tableFont"%>
+<br/>
+<br/>
+<div class="myTable4">
+			                    <table class="table table-striped table-condensed">
+			                      <tbody><tr class="tableFont">
+			                        <td>ID</td>
+			                        <td>Subject</td>
+			                        <td>Message</td>
+			                        <td>Department</td>
+			                        <td>Status</td>
+			                        <td>Priority</td>
+			                      </tr>
+			                      <tr class="tableFont2">
+			                        <td><%=@ticket.id%></td>
+			                      <td><%= @ticket.subject%></td>
+			                     <td><%= @ticket.message%></td>
+
+			                        <td>
+			                        	<%=@ticket.department.name%>
+			                        </td>
+			                        <td> <%=@ticket.status.name%></td>
+			                        <td><%=@ticket.priority.name%></td>
+			                      </tr>
+			                    </tbody></table>
+			                </div>
+
+<br/>
+<br/>
+<br/>
+<h3>Comments:</h3>
+<br/>
+<br/>
+<div class="myTable4">
+<table class="table table-striped table-condensed">
+  <thead>
+    <tr class="tableFont">
+      <th>Name</th>
+      <th>Comment</th>
+      <th>Created_at</th>
+      <th>Attachments</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr class="tableFont2">
+       <td><%= comment.user.user_name%></td>
+	<td><%= comment.comment%></td>
+	<td><%= comment.created_at.strftime(" %d/%m/%Y")%></td>
+	<% if comment.attachment.blank? %>
+
+			                <% else %>
+			                <td><%= link_to "Click here to view the document", comment.attachment.attachment.url(:original, false) %></td>
+			            	<%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</section>
+</article>

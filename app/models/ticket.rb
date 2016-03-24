@@ -26,7 +26,6 @@ class Ticket < ActiveRecord::Base
 
     def set_status
         @status = Status.find_by(name: "pending")
-        binding.pry
         self.update_attributes(status_id: @status.id)
     end
 

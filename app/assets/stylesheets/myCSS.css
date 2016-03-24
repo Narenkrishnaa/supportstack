@@ -429,7 +429,7 @@ td {
 @media (max-width: 860px) {
   .floatR {
 	float: none;
-  }
+  }     
 }
 
 @media (max-width: 330px) {
@@ -450,7 +450,7 @@ td {
   .resTable1 {
 	  visibility: visible;
 	  display: block;
-  }
+  } 
 	
   .resTable2 {
 	  visibility: hidden;
@@ -476,8 +476,8 @@ td {
 	  font-size: 18px;
 	  letter-spacing: -1px;
 	  padding-left: 6px;
-  }
-  
+  } 
+    
   .meMarg {
 	  margin-top: 3px;
   }

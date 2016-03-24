@@ -200,7 +200,7 @@ ActiveAdmin.setup do |config|
   #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
   #     end
   #   end
-
+    config.download_links = false
 
   # == Download Links
   #
@@ -210,7 +210,7 @@ ActiveAdmin.setup do |config|
   # To disable/customize for the :admin namespace:
   #
   #   config.namespace :admin do |admin|
-  #
+  
   #     # Disable the links entirely
   #     admin.download_links = false
   #

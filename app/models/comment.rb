@@ -2,6 +2,7 @@ class Comment < ActiveRecord::Base
   	
   	has_one :attachment, as: :attachable
   	belongs_to :commentable, :polymorphic => true
+    belongs_to :user
 	accepts_nested_attributes_for :attachment, allow_destroy: true
 
 	def update_status(comment)

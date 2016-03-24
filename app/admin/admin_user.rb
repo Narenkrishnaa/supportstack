@@ -1,7 +1,6 @@
 ActiveAdmin.register AdminUser, :as => "ADMIN" do
 
 permit_params :email, :password, :password_confirmation, :full_name, :username, :mobile
-config.clear_action_items!
 actions :all, :except => :destroy
 config.filters = false
   index do

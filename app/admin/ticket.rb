@@ -53,5 +53,10 @@ ActiveAdmin.register Ticket do
       @ticket.update(status_id: 4)
       redirect_to "/admin/tickets"
     end
+
+    def show
+      @ticket = Ticket.find_by(id: params[:id])
+      @comments = Comment.where(ticket_id:@ticket.id)
+    end
   end
 end

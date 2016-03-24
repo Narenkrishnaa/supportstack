@@ -19,7 +19,7 @@ filter :department
     f.inputs "Client Details" do
       f.input :first_name
       f.input :last_name
-      f.input :role_id, as: :hidden, value: Role.find_by(name: "client").try(:id)
+      f.input :role_id, :input_html => { :value => Role.find_by(:name=>"client").try(:id) }, as: :hidden
       f.input :client, as: :hidden, value: true
       f.input :mobile_no
       f.input :email
